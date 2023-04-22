@@ -1,0 +1,13 @@
+
+
+<%= render @post %>
+
+<div>
+
+  <%= link_to "Volver a los Posts", posts_path %>
+
+  <% if user_signed_in? && current_user == @post.user %>
+    <%= link_to "Editar post", editing_post_path(@post)%>
+    <%= button_to "Borrar post", @post, method: :delete %>
+  <% end %>
+</div>
